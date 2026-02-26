@@ -59,7 +59,6 @@
             margin: 5px 0;
         }
 
-        /* STYLE INFO TARAWIH (Hanya Imam) */
         .running-info-tarawih {
             background: rgba(0, 255, 136, 0.1);
             border: 2px solid var(--accent);
@@ -136,9 +135,7 @@
 </div>
 
 <script>
-    // GANTI LINK INI DENGAN LINK CSV GOOGLE SHEETS ANDA
     const URL_JADWAL_TARAWIH = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAJfrWBCTDGGBxz-GiP7i5QmHduzhVNpwk4DgEXIJpx8Si9vvAd8p2U0JrulsKCli1HwuGwBriqANK/pub?output=csv";
-
     const KODE_KOTA = '2310'; 
     let jadwalSholat = null;
     let isIqomah = false;
@@ -219,3 +216,24 @@
             
             const rows = csvText.split('\n');
             for (let i = 1; i < rows.length; i++) {
+                const cols = rows[i].split(',');
+                if (cols[0] && cols[0].trim() === today) {
+                    document.getElementById('display-tarawih').style.display = 'block';
+                    document.getElementById('imam-tarawih').innerText = cols[1].trim();
+                    break;
+                }
+            }
+        } catch (err) {
+            console.log("Error Tarawih:", err);
+        }
+    }
+
+    // Jalankan fungsi utama
+    setInterval(updateClock, 1000);
+    updateClock();
+    ambilDataSholat();
+    muatJadwalTarawih();
+</script>
+
+</body>
+</html>
