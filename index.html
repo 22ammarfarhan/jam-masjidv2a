@@ -17,102 +17,102 @@
             color: white;
             font-family: 'Segoe UI', Roboto, Arial, sans-serif;
             margin: 0; padding: 0; overflow: hidden;
-            height: 100vh; display: flex; flex-direction: column;
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column;
         }
 
-        .main-wrapper { display: flex; flex: 1; height: 85vh; overflow: hidden; }
+        /* Wrapper Utama dibagi menjadi Atas (Konten) dan Bawah (Footer) */
+        .main-wrapper { 
+            display: flex; 
+            flex: 1; 
+            height: 90vh; /* Memberikan ruang lebih besar untuk konten utama */
+            overflow: hidden; 
+        }
 
+        /* Panel Kiri: Informasi Utama */
         .left-panel {
             flex: 1.4;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            padding: 25px;
+            justify-content: space-between; /* Memastikan elemen tersebar rata */
+            padding: 20px 30px;
             border-right: 3px solid #333;
+            box-sizing: border-box;
         }
 
+        /* Panel Kanan: Slideshow */
         .right-panel {
-            flex: 0.6;
+            flex: 0.8; /* Sedikit diperlebar agar gambar lebih jelas */
             background: #111;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 10px;
-            position: relative; /* Penting untuk slideshow */
+            padding: 20px;
+            position: relative;
             overflow: hidden;
         }
 
-        /* STYLE BARU UNTUK SLIDESHOW */
-        .slideshow-container {
-            width: 100%;
-            height: 100%;
-            position: relative;
-        }
-
-        .mySlides {
-            display: none; /* Sembunyikan semua gambar di awal */
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 1s ease-in-out; /* Efek transisi halus */
-        }
-
-        .mySlides.active {
-            display: block;
-            opacity: 1;
-        }
-
-        .poster-frame {
-            width: 100%;
-            height: 100%;
-            border-radius: 15px;
-            object-fit: contain; /* Menggunakan contain agar gambar tidak terpotong */
-            border: 2px solid #444;
-        }
-
-        .nama-masjid { font-size: 2.8rem; text-align: center; margin: 0; font-weight: 800; color: #fff; }
-        .lokasi { text-align: center; font-size: 1.4rem; color: #aaa; margin-bottom: 5px; }
+        .nama-masjid { font-size: 2.5rem; text-align: center; margin: 0; font-weight: 800; color: #fff; text-transform: uppercase; }
+        .lokasi { text-align: center; font-size: 1.3rem; color: #aaa; margin-top: 5px; letter-spacing: 2px; }
         
         #jam-utama { 
-            font-size: 12rem; 
+            font-size: 10rem; /* Ukuran jam yang optimal untuk TV */
             font-weight: bold; 
             color: var(--accent); 
             text-align: center; 
             line-height: 1; 
-            margin: 10px 0;
+            margin: 15px 0;
+            text-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
         }
 
-        /* STYLE INFO KAJIAN HARIAN */
+        /* BOX KAJIAN HARIAN: Dibuat lebih ringkas agar tidak memakan tempat */
         .info-kajian-box {
-            background: rgba(0, 255, 136, 0.1);
+            background: rgba(0, 255, 136, 0.05);
             border: 2px solid var(--accent);
-            border-radius: 12px;
+            border-radius: 15px;
             padding: 15px;
             text-align: center;
-            margin: 15px 0;
+            margin: 10px 0;
         }
-        .label-kajian { color: var(--accent); font-weight: bold; font-size: 1.2rem; text-transform: uppercase; }
-        .judul-kajian { font-size: 2.2rem; font-weight: bold; color: white; display: block; margin-top: 5px; }
-        .pemateri-kajian { font-size: 1.5rem; color: #ccc; }
+        .label-kajian { color: var(--accent); font-weight: bold; font-size: 1.1rem; text-transform: uppercase; margin-bottom: 5px; }
+        .judul-kajian { font-size: 2rem; font-weight: bold; color: white; display: block; }
+        .pemateri-kajian { font-size: 1.4rem; color: #ccc; font-style: italic; }
 
-        #tgl-hijri { text-align: center; font-size: 1.8rem; color: var(--accent); margin-bottom: 20px; }
+        #tgl-hijri { text-align: center; font-size: 1.6rem; color: var(--accent); margin: 10px 0; }
         
-        .grid-sholat { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; }
+        /* GRID JADWAL SHOLAT: Dibuat lebih rapat */
+        .grid-sholat { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 12px; 
+            margin-top: auto; 
+        }
         .box-sholat {
             background: var(--card-bg);
-            padding: 18px;
-            border-radius: 15px;
+            padding: 12px;
+            border-radius: 12px;
             text-align: center;
-            border-bottom: 6px solid var(--accent);
+            border-bottom: 5px solid var(--accent);
         }
-        .sholat-name { font-size: 1.3rem; opacity: 0.8; color: var(--accent); font-weight: bold; }
-        .sholat-time { font-size: 3rem; font-weight: bold; }
+        .sholat-name { font-size: 1.1rem; opacity: 0.8; color: var(--accent); font-weight: bold; }
+        .sholat-time { font-size: 2.8rem; font-weight: bold; }
 
-        .footer { background: #600000; padding: 10px 0; height: 7vh; display: flex; align-items: center; }
-        marquee { font-size: 2.2rem; font-weight: 500; }
+        /* SLIDESHOW */
+        .slideshow-container { width: 100%; height: 100%; position: relative; }
+        .mySlides { display: none; width: 100%; height: 100%; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1s ease; }
+        .mySlides.active { display: block; opacity: 1; }
+        .poster-frame { width: 100%; height: 100%; border-radius: 15px; object-fit: contain; border: 1px solid #444; }
+
+        /* FOOTER RUNNING TEXT */
+        .footer { 
+            background: #600000; 
+            height: 8vh; /* Ukuran tinggi footer yang pas */
+            display: flex; 
+            align-items: center; 
+            border-top: 3px solid #ff3333;
+        }
+        marquee { font-size: 2.2rem; font-weight: bold; color: #fff; }
 
         #overlay-adzan {
             position: fixed; top:0; left:0; width:100%; height:100%;
@@ -125,7 +125,7 @@
 <body>
 
 <div id="overlay-adzan">
-    <div style="font-size: 5rem; color: var(--accent); font-weight: bold;">WAKTU ADZAN Tiba</div>
+    <div style="font-size: 5rem; color: var(--accent); font-weight: bold;">WAKTU ADZAN TIBA</div>
     <div style="font-size: 7rem; font-weight: bold; margin-top: 20px;">LURUSKAN SHAF</div>
     <div style="font-size: 3rem; color: #ff3333; margin-top: 20px;">MATIKAN HANDPHONE</div>
 </div>
@@ -133,7 +133,7 @@
 <div class="main-wrapper">
     <div class="left-panel">
         <div>
-            <h1 class="nama-masjid">MASJID BINTANG SUNNAH</h1>
+            <h1 class="nama-masjid">Masjid Bintang Sunnah</h1>
             <div class="lokasi">KOTA SAMARINDA</div>
             
             <div id="jam-utama">00:00:00</div>
@@ -146,12 +146,12 @@
 
             <div id="tgl-hijri">Memuat Jadwal...</div>
         </div>
+
         <div class="grid-sholat" id="jadwal-list"></div>
     </div>
     
     <div class="right-panel">
-        <div class="slideshow-container" id="slideshow-container">
-            </div>
+        <div class="slideshow-container" id="slideshow-container"></div>
     </div>
 </div>
 
@@ -160,46 +160,32 @@
 </div>
 
 <script>
-    // --- KONFIGURASI SLIDESHOW ---
-    // Masukkan link gambar Anda di sini
     const DAFTAR_GAMBAR = [
-        "https://i.ibb.co.com/LDfXDtTN/Screenshot-20260226-090251-Gallery.jpg", // Gambar 1
-        "https://i.ibb.co.com/8gmkZTjn/Screenshot-20260226-140257-Whats-App.jpg",           // Gambar 2
-        "https://i.ibb.co.com/9m3JsnL4/Screenshot-20260301-125539-Gallery.jpg"          // Gambar 3
-        // Tambahkan koma dan link gambar baru di bawahnya jika perlu
+        "https://i.ibb.co.com/LDfXDtTN/Screenshot-20260226-090251-Gallery.jpg",
+        "https://i.ibb.co.com/8gmkZTjn/Screenshot-20260226-140257-Whats-App.jpg",
+        "https://i.ibb.co.com/9m3JsnL4/Screenshot-20260301-125539-Gallery.jpg"
     ];
-    // Waktu ganti gambar dalam milidetik (30 detik = 30000)
     const WAKTU_SLIDE = 10000; 
-
-    // LINK CSV GOOGLE SHEETS (Kolom: Hari, Judul, Pemateri)
     const URL_KAJIAN = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSAJfrWBCTDGGBxz-GiP7i5QmHduzhVNpwk4DgEXIJpx8Si9vvAd8p2U0JrulsKCli1HwuGwBriqANK/pub?output=csv";
     const KODE_KOTA = '2310';
     let jadwalSholat = null;
-    let slideIndex = 0; // Index gambar yang sedang ditampilkan
+    let slideIndex = 0;
 
     function updateClock() {
         const now = new Date();
         const h = String(now.getHours()).padStart(2, '0');
         const m = String(now.getMinutes()).padStart(2, '0');
         const s = String(now.getSeconds()).padStart(2, '0');
-        
         document.getElementById('jam-utama').innerText = `${h}:${m}:${s}`;
-        
-        if (jadwalSholat && s === "00") { 
-            checkAdzanTime(`${h}:${m}`);
-        }
+        if (jadwalSholat && s === "00") { checkAdzanTime(`${h}:${m}`); }
     }
 
     function checkAdzanTime(waktuSekarang) {
         const daftar = ['subuh', 'dzuhur', 'ashar', 'maghrib', 'isya'];
         const isAdzan = daftar.some(s => jadwalSholat[s] === waktuSekarang);
-        
         if (isAdzan) {
             document.getElementById('overlay-adzan').style.display = 'flex';
-            // Overlay hilang otomatis setelah 5 menit (300.000 ms)
-            setTimeout(() => {
-                document.getElementById('overlay-adzan').style.display = 'none';
-            }, 300000);
+            setTimeout(() => { document.getElementById('overlay-adzan').style.display = 'none'; }, 300000);
         }
     }
 
@@ -209,11 +195,9 @@
             const url = `https://api.myquran.com/v1/sholat/jadwal/${KODE_KOTA}/${t.getFullYear()}/${t.getMonth()+1}/${t.getDate()}`;
             const response = await fetch(url);
             const data = await response.json();
-            
             if(data.status) {
                 jadwalSholat = data.data.jadwal;
                 document.getElementById('tgl-hijri').innerText = jadwalSholat.tanggal;
-                
                 const listTampil = ['subuh', 'terbit', 'dzuhur', 'ashar', 'maghrib', 'isya'];
                 let html = '';
                 listTampil.forEach(s => {
@@ -224,46 +208,36 @@
                 });
                 document.getElementById('jadwal-list').innerHTML = html;
             }
-        } catch (err) {
-            document.getElementById('tgl-hijri').innerText = "Koneksi Bermasalah...";
-        }
+        } catch (err) { document.getElementById('tgl-hijri').innerText = "Koneksi Bermasalah..."; }
     }
 
     async function muatKajianHarian() {
         try {
             const res = await fetch(URL_KAJIAN);
             const csvText = await res.text();
-            
             const days = ["Ahad", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
             const hariIni = days[new Date().getDay()];
-            
             const rows = csvText.split('\n');
             let ditemukan = false;
-
             for (let i = 1; i < rows.length; i++) {
                 const cols = rows[i].split(',');
                 if (cols[0] && cols[0].trim().toLowerCase() === hariIni.toLowerCase()) {
                     document.getElementById('hari-kajian').innerText = "KAJIAN HARI " + hariIni.toUpperCase();
                     document.getElementById('judul-kajian').innerText = cols[1].trim();
                     document.getElementById('pemateri-kajian').innerText = cols[2] ? cols[2].trim() : "-";
-                    ditemukan = true;
-                    break;
+                    ditemukan = true; break;
                 }
             }
             if(!ditemukan) {
                 document.getElementById('judul-kajian').innerText = "Tidak Ada Jadwal Kajian";
                 document.getElementById('pemateri-kajian').innerText = "-";
             }
-        } catch (err) {
-            console.error("Gagal memuat kajian");
-        }
+        } catch (err) { console.error("Gagal memuat kajian"); }
     }
 
-    // --- LOGIKA SLIDESHOW ---
     function inisialisasiSlideshow() {
         const container = document.getElementById('slideshow-container');
-        // Masukkan semua gambar ke dalam HTML
-        DAFTAR_GAMBAR.forEach((url, index) => {
+        DAFTAR_GAMBAR.forEach((url) => {
             const div = document.createElement('div');
             div.className = 'mySlides';
             const img = document.createElement('img');
@@ -272,31 +246,23 @@
             div.appendChild(img);
             container.appendChild(div);
         });
-        
-        // Tampilkan gambar pertama
         tampilkanSlide();
-        // Jalankan interval ganti gambar
-        setInterval(tampilkanSlide, WAKTU_SLIDE); //
+        setInterval(tampilkanSlide, WAKTU_SLIDE);
     }
 
     function tampilkanSlide() {
         const slides = document.getElementsByClassName('mySlides');
-        // Sembunyikan semua gambar
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove('active');
-        }
-        // Tampilkan gambar berikutnya
+        for (let i = 0; i < slides.length; i++) { slides[i].classList.remove('active'); }
         slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1} //
-        slides[slideIndex-1].classList.add('active'); //
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].classList.add('active');
     }
 
-    // Jalankan semua fungsi utama
     setInterval(updateClock, 1000);
     updateClock();
     ambilDataSholat();
     muatKajianHarian();
-    inisialisasiSlideshow(); //
+    inisialisasiSlideshow();
 </script>
 
 </body>
